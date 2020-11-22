@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "aluno",
+      "launchUrl": "api/aluno",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "SmartSchool.WebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "aluno",
+      "launchUrl": "api/aluno",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
