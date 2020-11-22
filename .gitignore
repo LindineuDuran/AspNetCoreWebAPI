@@ -338,3 +338,4 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+SmartSchool.WebAPI/obj/Debug/netcoreapp3.1/SmartSchool.WebAPI.assets.cache
