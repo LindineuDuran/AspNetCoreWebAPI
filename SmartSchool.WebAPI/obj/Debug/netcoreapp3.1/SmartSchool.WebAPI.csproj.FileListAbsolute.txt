@@ -51,3 +51,11 @@ D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\obj\Debug\netcoreapp3.1\SmartSchool.
 D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\obj\Debug\netcoreapp3.1\SmartSchool.WebAPI.genruntimeconfig.cache
 D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\obj\Debug\netcoreapp3.1\SmartSchool.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\SmartSchool.WebAPI.xml
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\GitHub\C#\SmartSchool\SmartSchool.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll

@@ -4,25 +4,37 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Data;
-using SmartSchool.WebAPI.DTOs;
+using SmartSchool.WebAPI.V1.DTOs;
 using SmartSchool.WebAPI.Models;
 
-namespace SmartSchool.WebAPI.Controllers
+namespace SmartSchool.WebAPI.V1.Controllers
 {
+    /// <summary>
+    /// Versão 1.0 do Controlador de Professor
+    /// </summary>
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProfessorController : ControllerBase
     {
         private readonly IRepository _repo;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repo"></param>
+        /// <param name="mapper"></param>
         public ProfessorController(IRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
         }
 
-        // GET: api/<ProfessorsController>
+        /// <summary>
+        /// Método responsável para retornar todos os professores
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,14 +43,21 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<ProfessorDTO>>(professor));
         }
 
-        // GET: api/<ProfessorsController>
+        /// <summary>
+        /// Método responsável para retornar todos os ProfessorRegistraDTO.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("getRegister")]
         public IActionResult GetRegister()
         {
             return Ok(_repo.GetAllProfessores(false));
         }
 
-        // GET api/<ProfessorsController>/5
+        /// <summary>
+        /// Método responsável por retonar apenas um único ProfessorDTO.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -50,7 +69,11 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(professorDTO);
         }
 
-        // POST api/<ProfessoresController>
+        /// <summary>
+        /// Método responsável por inserir um novo ProfessorRegistraDTO.
+        /// </summary>
+        /// <param name="professorDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(ProfessorRegistraDTO professorDTO)
         {
@@ -65,7 +88,12 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("O Professor não foi cadastrado!");
         }
 
-        // PUT api/<ProfessoresController>/5
+        /// <summary>
+        /// Método responsável por alterar apenas um determinado ProfessorRegistraDTO.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="professorDTO"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, ProfessorRegistraDTO professorDTO)
         {
@@ -83,7 +111,12 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("O Professor não foi alterado!");
         }
 
-        // PATCH api/<ProfessoresController>/5
+        /// <summary>
+        /// Método responsável por alterar parte de um determinado ProfessorRegistraDTO.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="professorDTO"></param>
+        /// <returns></returns>
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, ProfessorRegistraDTO professorDTO)
         {
@@ -101,7 +134,11 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("O Professor não foi alterado!");
         }
 
-        // DELETE api/<ProfessoresController>/5
+        /// <summary>
+        /// Método responsável por eliminar um determinado Professor.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

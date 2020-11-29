@@ -1,6 +1,6 @@
 using System;
 
-namespace SmartSchool.WebAPI.DTOs
+namespace SmartSchool.WebAPI.V2.DTOs
 {
     public class AlunoRegistraDTO
     {

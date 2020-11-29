@@ -2,25 +2,37 @@ using System.Collections.Generic;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SmartSchool.WebAPI.Data;
-using SmartSchool.WebAPI.DTOs;
+using SmartSchool.WebAPI.V2.DTOs;
 using SmartSchool.WebAPI.Models;
 
-namespace SmartSchool.WebAPI.Controllers
+namespace SmartSchool.WebAPI.V2.Controllers
 {
+    /// <summary>
+    /// Controller de Alunos
+    /// </summary>
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AlunoController : ControllerBase
     {
         private readonly IRepository _repo;
         private readonly IMapper _mapper;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repo"></param>
+        /// <param name="mapper"></param>
         public AlunoController(IRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
         }
 
-        // GET: api/<AlunosController>
+        /// <summary>
+        /// Método responsável para retornar todos os alunos
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -29,14 +41,11 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<AlunoDTO>>(alunos));
         }
 
-        // GET: api/<AlunosController>
-        [HttpGet("getRegister")]
-        public IActionResult GetRegister()
-        {
-            return Ok(_repo.GetAllAlunos(false));
-        }
-
-        // GET api/<AlunosController>/5
+        /// <summary>
+        /// Método responsável por retonar apenas um único AlunoDTO.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -48,7 +57,11 @@ namespace SmartSchool.WebAPI.Controllers
             return Ok(alunoDTO);
         }
 
-        // POST api/<AlunosController>
+        /// <summary>
+        /// Método responsável por inserir um novo AlunoRegistraDTO.
+        /// </summary>
+        /// <param name="alunoDTO"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(AlunoRegistraDTO alunoDTO)
         {
@@ -63,7 +76,12 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("O Aluno não foi cadastrado!");
         }
 
-        // PUT api/<AlunosController>/5
+        /// <summary>
+        /// Método responsável por alterar apenas um determinado AlunoRegistraDTO.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="alunoDTO"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult Put(int id, AlunoRegistraDTO alunoDTO)
         {
@@ -81,25 +99,11 @@ namespace SmartSchool.WebAPI.Controllers
             return BadRequest("O Aluno não foi alterado!");
         }
 
-        // PATCH api/<AlunosController>/5
-        [HttpPatch("{id}")]
-        public IActionResult Patch(int id, AlunoRegistraDTO alunoDTO)
-        {
-            var aluno = _repo.GetAlunoById(id);
-            if (aluno == null) return BadRequest("O Aluno não foi encontrado");
-
-            _mapper.Map(alunoDTO, aluno);
-            _repo.Update(aluno);
-
-            if (_repo.SaveChanges())
-            {
-                return Created($"/api/aluno/{alunoDTO.Id}", _mapper.Map<AlunoDTO>(aluno));
-            }
-
-            return BadRequest("O Aluno não foi alterado!");
-        }
-
-        // DELETE api/<AlunosController>/5
+        /// <summary>
+        /// Método responsável por eliminar um determinado Aluno.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
