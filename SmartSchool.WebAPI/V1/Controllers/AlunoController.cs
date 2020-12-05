@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using SmartSchool.WebAPI.Data;
 using SmartSchool.WebAPI.V1.DTOs;
 using SmartSchool.WebAPI.Models;
+using System.Threading.Tasks;
+using SmartSchool.WebAPI.Helpers;
 
 namespace SmartSchool.WebAPI.V1.Controllers
 {
@@ -29,17 +31,21 @@ namespace SmartSchool.WebAPI.V1.Controllers
             _mapper = mapper;
         }
 
-        /// <summary>
-        /// Método responsável para retornar todos os alunos
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var alunos = _repo.GetAllAlunos(true);  
+    /// <summary>
+    /// Método responsável para retornar todos os alunos
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet]
+    public async Task<IActionResult> Get([FromQuery]PageParams pageParams)
+    {
+        var alunos = await _repo.GetAllAlunosAsync(pageParams, true);  
 
-            return Ok(_mapper.Map<IEnumerable<AlunoDTO>>(alunos));
-        }
+        var alunosResult = _mapper.Map<IEnumerable<AlunoDTO>>(alunos);
+
+        Response.AddPagination(alunos.CurrentPage, alunos.PageSize, alunos.TotalCount, alunos.TotalPages);
+
+        return Ok(alunosResult);
+    }
 
         /// <summary>
         /// Método responsável para retornar todos os AlunoRegistraDTO.
