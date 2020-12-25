@@ -1,3 +1,20 @@
 ## Udemy Course
-
 ### Crie uma Web API com Asp.NET Core 3.1 + EF Core 3.1 + Docker
+- [Crie uma Web API com Asp.NET Core 3.1 + EF Core 3.1 + Docker | Udemy](https://www.udemy.com/course/criando-web-api-com-aspnet-core-31-ef-core-31/?utm_source=adwords&utm_medium=udemyads&utm_campaign=INTL-AW-PROS-Brazil-DSA-WebIndex&utm_content=deal4584&utm_term=_._ag_110792056508_._ad_440430986864_._de_c_._dm__._pl__._ti_dsa-525138004927_._li_1001772_._pd__._&gclid=EAIaIQobChMI9LHR7K767AIVTgSRCh3CowOOEAAYASAAEgLAVPD_BwE)
+- [vsandrade/AspNetCoreWebAPI](https://github.com/vsandrade/AspNetCoreWebAPI)
+- [vsandrade/Youtube-Angular-NetCoreAPI](https://github.com/vsandrade/Youtube-Angular-NetCoreAPI)
+### Material de Apoio
+- [.Net Core 3.1](https://dotnet.microsoft.com/download)
+- [Visual Studio Code](https://visualstudio.microsoft.com/pt-br/downloads/)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+- [Install Docker Desktop on Windows](https://docs.docker.com/docker-for-windows/install/)
+- [Install Docker Desktop on Windows Home](https://docs.docker.com/docker-for-windows/install-windows-home/)
+- [Dockerize an ASP.NET Core application](https://docs.docker.com/engine/examples/dotnetcore/)
+- [nodeJS](https://nodejs.org/en/)
+- [git](https://git-scm.com/)
+- [postman](https://www.postman.com/)
+- [Angular](https://angular.io/guide/setup-local)
+- [Bootstrap](https://getbootstrap.com/)
+- [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/documentation)
+- [ngx-spinner](https://openbase.io/js/ngx-spinner)
+- [scttcper/ngx-toastr](https://github.com/scttcper/ngx-toastr/releases)
