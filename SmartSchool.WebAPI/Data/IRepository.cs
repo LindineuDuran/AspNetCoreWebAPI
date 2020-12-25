@@ -15,11 +15,13 @@ namespace SmartSchool.WebAPI.Data
         Task<PageList<Aluno>> GetAllAlunosAsync(PageParams pageParams, bool includeDisciplina = false);
          Aluno[] GetAllAlunos(bool includeDisciplina = false);
          Aluno[] GetAlunosByDisciplinaId(int disciplinaId, bool includeDisciplina = false);
+         Task<Aluno[]> GetAlunoByDisciplinaIdAsync(int disciplinaId, bool includeDisciplina = false);
          Aluno GetAlunoById(int alunoId, bool includeDisciplina = false);
 
          // Professores
          Professor[] GetAllProfessores(bool includeDisciplina = false);
          Professor[] GetProfessoresByDisciplinaId(int disciplinaId, bool includeDisciplina = false);
-         Professor GetProfessorById(int professorId, bool includeDisciplina = false);
+         Professor GetProfessorById(int professorId, bool includeAlunos = false);
+         Professor[] GetProfessoresByAlunoId(int alunoId, bool includeAlunos = false);
     }
 }

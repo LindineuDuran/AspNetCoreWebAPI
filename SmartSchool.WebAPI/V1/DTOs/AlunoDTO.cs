@@ -9,6 +9,6 @@ namespace SmartSchool.WebAPI.V1.DTOs
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public int Idade { get; set; }
-        public DateTime DataIni { get; set; }
+        public string DataIni { get; set; }
         public bool Ativo { get; set; }    }
 }
