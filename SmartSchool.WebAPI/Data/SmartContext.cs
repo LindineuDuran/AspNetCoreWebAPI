@@ -43,16 +43,16 @@ namespace SmartSchool.WebAPI.Data
             
             builder.Entity<Disciplina>()
                 .HasData(new List<Disciplina>{
-                    new Disciplina(1, "Matemática", 1, 1),
-                    new Disciplina(2, "Matemática", 1, 3),
+                    new Disciplina(1, "Matemática I", 1, 1),
+                    new Disciplina(2, "Matemática II", 1, 3),
                     new Disciplina(3, "Física", 2, 3),
                     new Disciplina(4, "Português", 3, 1),
-                    new Disciplina(5, "Inglês", 4, 1),
-                    new Disciplina(6, "Inglês", 4, 2),
-                    new Disciplina(7, "Inglês", 4, 3),
-                    new Disciplina(8, "Programação", 5, 1),
-                    new Disciplina(9, "Programação", 5, 2),
-                    new Disciplina(10, "Programação", 5, 3)
+                    new Disciplina(5, "Inglês I", 4, 1),
+                    new Disciplina(6, "Inglês II", 4, 2),
+                    new Disciplina(7, "Inglês III", 4, 3),
+                    new Disciplina(8, "Programação I", 5, 1),
+                    new Disciplina(9, "Programação II", 5, 2),
+                    new Disciplina(10, "ProgramaçãoIII", 5, 3)
                 });
             
             builder.Entity<Aluno>()
