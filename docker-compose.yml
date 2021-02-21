@@ -23,20 +23,28 @@ services:
             - MYSQL_PASSWORD=lalaland 
             - MYSQL_ROOT_PASSWORD=lalaland 
             - MYSQL_ROOT_HOST=%
-            - bind-address:0.0.0.0 
+            - bind-address:0.0.0.0
+        restart: always
     
     smartschool:
         image: lduran355/smartschool:latest
-        build:
-            context: .
-            dockerfile: Dockerfile
-        container_name: smartschool
-        networks: 
-            - mysqlNET
-            - smartschoolNET
-        ports: 
+        ports:
             - 5000:80
         environment: 
             - DBHOST=mysql
-        depends_on: 
+        restart: always
+        depends_on: # Start the depends_on first
             - mysql
+        networks: 
+            - mysqlNET
+            - smartschoolNET
+            
+    smartschoolapp-front-end:
+        image: lduran355/smart-school-front-end:latest
+        ports:
+            - 5001:80
+        restart: always
+        depends_on: # Start the depends_on first
+            - smartschool
+        networks:
+            - smartschoolNET
